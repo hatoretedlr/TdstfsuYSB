@@ -21,13 +21,11 @@ services:
     command: -config.file=/etc/promtail/promtail.yaml
     networks:
       - loki
-    restart: unless-stopped
 
   loki:
     image: grafana/loki:latest
     ports:
       - "3100:3100"
-    command: -config.file=/etc/loki/loki.yaml
     networks:
       - loki
     restart: unless-stopped
